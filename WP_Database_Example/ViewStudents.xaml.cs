@@ -49,6 +49,19 @@ namespace WP_Database_Example
             }
         }
 
+        private void EditRegister(object sender, EventArgs e)
+        {
+            if (StudentListBox.SelectedIndex != -1)
+            {
+                Student st = (Student)StudentListBox.SelectedItem;
+                NavigationService.Navigate(new Uri("/EditStudent.xaml?id=" + st.ID, UriKind.RelativeOrAbsolute));
+            }
+            else
+            {
+                MessageBox.Show("A Student must be selected in order to edit it!");
+            }
+        }
+
 
     }
 }
